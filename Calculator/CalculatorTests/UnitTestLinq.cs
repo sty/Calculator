@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 namespace CalculatorTests
 {
     [TestClass]
-    public class CheckBookTest
+    public class UnitTestLinq
     {
         [TestMethod]
         public void FillsUpProperly()
@@ -41,24 +41,12 @@ namespace CalculatorTests
 
         }
 
-        [TestMethod]
-        public void Group()
-        {
-            var ob = new CheckBookVM();
-            ob.Fill();
 
-            var total = ob.Transactions.GroupBy(t => t.Tag).Select(g => new { g.Key, Sum=g.Sum( t=> t.Amount ) });
-
-            Assert.AreEqual(261, total.First().Sum);
-            Assert.AreEqual(300, total.Last().Sum);
-        }
         [TestMethod]
         public void AverageTransaction()
         {
             var ob = new CheckBookVM();
             ob.Fill();
-            //var category = "Food";
-            //var food = ob.Transactions.Where(t => t.Tag == "Food");
             var totalFood = ob.Transactions.Where(t => t.Tag == "Food").Sum(g => g.Amount);
              var countFood = ob.Transactions.Where( t => t.Tag == "Food" ).Count();
              var averageSpentOnFood = totalFood / countFood;
@@ -166,7 +154,7 @@ namespace CalculatorTests
             var acc = new CheckBookVM();
             acc.Fill();
             var autoSpending = acc.Transactions.Where(t => t.Tag == "Auto").GroupBy(t => t.Account).Select(g => new { g.Key, Sum = g.Sum(t => t.Amount) });
-            var mostUsed = autoSpending.OrderByDescending(t => t.Sum);
+            var mostUsed = autoSpending.OrderByDescending(t => t.Sum);  // Sorting by the amount spent on auto 
             Assert.AreEqual("Checking", mostUsed.First().Key);  // Both account was used equally for auto
             Assert.AreEqual(150, autoSpending.First().Sum);
             Assert.AreEqual(150, autoSpending.Last().Sum); 
