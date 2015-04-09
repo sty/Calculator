@@ -72,18 +72,18 @@ namespace Calculator.CheckBook
         public void Fill()
         {
             Transactions = new ObservableCollection<Transaction>( new[] {
-                new Transaction { VM=this, Date= DateTime.Now.AddDays(-1), Account="Checking", Payee="Moshe", Amount=30, Tag="Food" },
-                new Transaction { VM=this, Date= DateTime.Now.AddDays(-3), Account="Checking", Payee="Tim", Amount=130, Tag="Auto" },
-                new Transaction { VM=this, Date= DateTime.Now.AddDays(-4), Account="Checking", Payee="Moshe", Amount=35, Tag="Food" },
-                new Transaction { VM=this, Date= DateTime.Now.AddDays(-5), Account="Checking", Payee="Bracha", Amount=35, Tag="Food" },
-                new Transaction { VM=this, Date= DateTime.Now.AddDays(-6), Account="Checking", Payee="Tim", Amount=20, Tag="Auto" },
-                new Transaction { VM=this, Date= DateTime.Now.AddDays(-1), Account="Credit", Payee="Moshe", Amount=30, Tag="Food" },
-                new Transaction { VM=this, Date= DateTime.Now.AddDays(-2), Account="Credit", Payee="Bracha", Amount=30.5, Tag="Food" },
-                new Transaction { VM=this, Date= DateTime.Now.AddDays(-3), Account="Credit", Payee="Tim", Amount=130, Tag="Auto" },
-                new Transaction { VM=this, Date= DateTime.Now.AddDays(-4), Account="Credit", Payee="Moshe", Amount=35, Tag="Food" },
-                new Transaction { VM=this, Date= DateTime.Now.AddDays(-5), Account="Credit", Payee="Bracha", Amount=35, Tag="Food" },
-                new Transaction { VM=this, Date= DateTime.Now.AddDays(-2), Account="Checking", Payee="Bracha", Amount=30.5, Tag="Food" },
-                new Transaction { VM=this, Date= DateTime.Now.AddDays(-6), Account="Credit", Payee="Tim", Amount=20, Tag="Auto" },
+                new Transaction { VM=this, Date= new DateTime(2015, 04, 07), Account="Checking", Payee="Moshe", Amount=30, Tag="Food" },
+                new Transaction { VM=this, Date= new DateTime(2015, 04, 05), Account="Checking", Payee="Tim", Amount=130, Tag="Auto" },
+                new Transaction { VM=this, Date= new DateTime(2015, 04, 04), Account="Checking", Payee="Moshe", Amount=35, Tag="Food" },
+                new Transaction { VM=this, Date= new DateTime(2015, 04, 03), Account="Checking", Payee="Bracha", Amount=35, Tag="Food" },
+                new Transaction { VM=this, Date= new DateTime(2015, 04, 02) , Account="Checking", Payee="Tim", Amount=20, Tag="Auto" },
+                new Transaction { VM=this, Date= new DateTime(2015, 04, 07), Account="Credit", Payee="Moshe", Amount=30, Tag="Food" },
+                new Transaction { VM=this, Date= new DateTime(2015, 04, 06), Account="Credit", Payee="Bracha", Amount=30.5, Tag="Food" },
+                new Transaction { VM=this, Date= new DateTime(2015, 04, 05), Account="Credit", Payee="Tim", Amount=130, Tag="Auto" },
+                new Transaction { VM=this, Date= new DateTime(2015, 04, 04), Account="Credit", Payee="Moshe", Amount=35, Tag="Food" },
+                new Transaction { VM=this, Date= new DateTime(2015, 04, 03), Account="Credit", Payee="Bracha", Amount=35, Tag="Food" },
+                new Transaction { VM=this, Date= new DateTime(2015, 04, 06), Account="Checking", Payee="Bracha", Amount=30.5, Tag="Food" },
+                new Transaction { VM=this, Date= new DateTime(2015, 04, 02), Account="Credit", Payee="Tim", Amount=20, Tag="Auto" },
             });
         }
     }

@@ -22,16 +22,8 @@ namespace CalculatorTests
             Assert.AreEqual(12, ob.Transactions.Count);
         }
 
-        [TestMethod]
-        public void CountofEqualsMoshe()
-        {
-            var ob = new CheckBookVM();
-            ob.Fill();
-
-            var count = ob.Transactions.Where( t => t.Payee == "Moshe" ).Count();
-
-            Assert.AreEqual(4, count);
-        }
+ 
+      
 
         [TestMethod]
         public void SumOfMoneySpentOnFood()
