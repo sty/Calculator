@@ -40,7 +40,7 @@ namespace CalculatorTests
             Assert.AreEqual(261, total);
 
         }
-
+       // What is the average transaction amount for each tag?
 
         [TestMethod]
         public void AverageTransaction()
@@ -63,7 +63,6 @@ namespace CalculatorTests
         {
             var ob = new CheckBookVM();
             ob.Fill();
-           
             var amountPaidTim = ob.Transactions.Where(t => t.Payee == "Tim").Sum(g => g.Amount);
             var amountPaidMoshe = ob.Transactions.Where(t => t.Payee == "Moshe").Sum(g => g.Amount);
             var amountPaidBracha = ob.Transactions.Where(t => t.Payee == "Bracha").Sum(g => g.Amount);
@@ -81,9 +80,9 @@ namespace CalculatorTests
             var amountPaidMoshe4food = ob.Transactions.Where(t => t.Payee == "Moshe").Where(g => g.Tag == "Food").Sum(h => h.Amount);
             var amountPaidBracha4food = ob.Transactions.Where(t => t.Payee == "Bracha").Where(g => g.Tag == "Food").Sum(h => h.Amount);
             var amountPaidTim4food = ob.Transactions.Where(t => t.Payee == "Tim").Where(g => g.Tag == "Food").Sum(h => h.Amount);
-            Assert.AreEqual(130, amountPaidMoshe4food);
-            Assert.AreEqual(131, amountPaidBracha4food);
-            Assert.AreEqual(0, amountPaidTim4food);
+            Assert.AreEqual(130, amountPaidMoshe4food);  // paid $130 for Moshe
+            Assert.AreEqual(131, amountPaidBracha4food); // paid $131 for Bracha
+            Assert.AreEqual(0, amountPaidTim4food);  // paid $0 for Tim
         }
     //List the transaction between April 5th and 7th
         [TestMethod]
@@ -159,7 +158,7 @@ namespace CalculatorTests
             Assert.AreEqual(150, autoSpending.First().Sum);
             Assert.AreEqual(150, autoSpending.Last().Sum); 
             var equal = mostUsed.First().Sum.Equals(mostUsed.Last().Sum);
-            Assert.AreEqual("True", equal.ToString());  // Credit was used as frequent as checking (amount of money)
+            Assert.AreEqual("True", equal.ToString());  // Credit was used as much as checking (amount of money)
          
         }
 
